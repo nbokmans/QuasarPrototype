@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import state from './store'
     export default {
         data() {
             return {
@@ -14,6 +15,9 @@
             getCurrentRoute() {
                 return this.$route.path.split('/').length > 1 ? this.$route.path.split('/')[1] : 'home';
             }
+        },
+        mounted() {
+            state.set('/orders')
         }
     }
 </script>
